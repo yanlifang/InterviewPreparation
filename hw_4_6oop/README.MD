@@ -4,7 +4,7 @@ https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/c
 set upstream: git remote add upstream repo_url 
 
 How to use fork and PR? 
-1.	Find the repo you are interested, you can use this to try: https://github.com/yanlifang/instruction
+1.	Find the repo you are interested, you can use this to try: https://github.com/TAIsRich/chuwa4.1ShortQuestions.git
 2.	Click fork 
 3.	Then login to your github, it will create a copy of my repo in your accout 
 4.	Click code, then click right square after https to copy your repo url 
