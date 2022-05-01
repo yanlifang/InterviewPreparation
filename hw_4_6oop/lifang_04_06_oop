@@ -1,0 +1,173 @@
+Write the answers using markdown, and push your markdown files to your github repo, then share your repo link to me by Direct messages.
+You will be fired if you don’t do the assignments. we don’t care the quality, we only care you do it or not.
+1. What is Interface and what is abstract class? What are the differences between them?
+Abstraction refers to hiding the internal implementtion of the feature and only showing the functionality to the users. 
+Both abstract class and interface are used for abstraction. 
+An interface is a completely "abstract class" that is used to group related methods with empty bodies.
+An abstract class is a restricted clas that cannot be used to create objects (to access it, it must be inherited from another class)
+Difference of abstract class and interface:
+Type of methods: Interface can have only abstract methods. An abstract class can have abstract and non-abstract methods. 
+From Java 8, it can have default and static methods also. 
+Final variables: variables declared in Java interface are by default final. An abstract class may contain non-final varialbes. 
+Type of variables: Abstract class can have final, non-final, static and non-static variables. The interface has only static and final variables. 
+Type of variables: Abstract class can have final, non-final, static and non-static variables. The interface has only static and final variables.
+implementtion: Abstract class can provide the implementtion of the interface. Interface can't provide the implementtion of an abstract class. 
+Inheritance vs Abstraction: A java interface can be implemented usign the keyword "implements" and 
+an abstract class can be extended usigng the keyword "extends". 
+Multiple implementations: An interface can extend another Java interface only, an abstract class can extend another Java class 
+and implement multiple Java interfaces.
+Accessibility of Data Members: Memebers of a Java interface are public by default. A Java abstract class can have class members like private, protected, etc.
+
+Abstract: is a non-access modifier in java applicable for classes, methods but not variables.
+It is used to achieve abstraction which is one of the pillar of Object Oriented Programming (OOP). 
+Any class that contains one or more abstract methods must also be declared abstract. 
+The following are various illegal combinations of other modifiers for methods with respect to abstract modifider:
+1. final 
+2. abstract native
+3. abstract synchronized 
+4. abstract static 
+5. abstract private 
+6. abstract strictfp 
+
+2. What is the differences between overriding and overloading?
+Method overloading is a compile-time polymorphism, but method overriding is a run-time polymorphism.
+Method overloading helps to increase the readability of the program, but method override is used to grant the specific implementation of
+the method which is already provided by its parent class or superclass. 
+Method overload occurs within the clas, but method override performed in two classes with inheritance relationships.
+Method overloading may or may not require inheritance, method overriding always needs inheritance.
+In method overloading, methods must have the same value and different signatures, but method overriding methods must have the same name and same signature.
+Method overloading, the return type can or can not the same, but we just have to change the parameter. Method overriding, the return type must be the same or co-variant. 
+
+In method overloading, more than one methods shares the same method name with a different signature in the class. In method overloading, the return type can or can not be the same, but 
+we have to change the parameter because, in java, we cannot achieve the method overloading by chaning only the return type of the method. 
+In method overriding, the derived class provides the specific implementation of the method that is already provided by the base class or parent class. 
+
+3. What is final key word? (Filed, Method, Class)
+final is a non-access modifier applicalbe only to variable, method, and class 
+Final variable is to create constant variable
+Final methods is to prevent method overriding
+Final class is to prevent inheritance
+
+Final Variable is a variable cannot be modified, essentially, a constant. Therefore, you can't initialize a final variable.
+If the final varaible is a reference, this means that the variable cannot be re-bound to reference another object., but 
+the internal state of the object pointed by that reference variable can be changed. 
+You can add or remove elements from the final array or final collection. 
+
+Final method is declared with final keyword. Final method cannot be overriden. The object class does this - a nubmer of its 
+methods are final. We must declare methods with the final keyword for which we are required to follow the same 
+implementtation throughout all the derived classes. 
+
+Final class cannot be inheried. Defined final class with final keyword. 
+
+4. What is Java garbage collection?
+Java garbage collection is the process Java programs perform automatic memory management. Java programs 
+compile to bytecode that can be run on a Java Virtual Machine, or JVM for short. When Java programs run on the JVM,
+objects are created on the heap, which is a portion of memory dedicated to the program. 
+
+5. What is the differences between super and this?
+super() and this() both are used to make constructor calls. super() is used to call Base class's 
+constructor (i.e., parent's class) while this() is used to call current class's constructor. 
+this() is used to refer current-class's instance as well as static members. 
+We can only use this() inside constructor and nowhere else, not even in static context not even inside methods
+this() should be first statement inside constructor. 
+We can use super() as well as this() only once inside constructor. we can use either super() or this() as first statement inside constructor and not both. 
+You can decide if you use super() or this() or not because if we are not using this() or super() then 
+be default compile will put super() as first statement inside constructor. 
+
+
+
+6. Can we use this keyword in constructor and why?
+Yes. We can use super() as well as this() only inside constructor. 
+Constructors use this to refer to another constructor in the same class with a different parameter list. 
+The most common reason for using this keyword is because a field is shadowed by a method or constructor paraemter. 
+Each arguement to the constructor shadows one of the object's filedds - inside the constructor x is a local copy of the 
+constructor's first argument. call this() is called an explicit constructor invocation. 
+
+7. What is Runtime/unchecked exception? what is Compile/Checked Exception?
+An unchecked exception is an exception that occurs at the time of exception. There are also called 
+as Runtime Exceptions. These include programming bugs, such as logic errors or improper use of an API. 
+Runtime exceptions are ignored at the time of compilation. 
+
+A checked exception is an exception that occurs at the compile time, these are also called as compile time
+exceptions. These exceptions cannot simply be ignored at the time of compilation, the programmer should take care 
+of (handle) these exceptions. 
+
+
+8. what is the difference between throw and throws?
+Both throw and throws are concepts of exception handling in Java. The throws keyword is used to 
+declare which which exceptions can be throwns from a method, while the throw method is used to explicit
+throw an exception within a method or block of code. 
+
+9. Run the below three pieces codes, Noticed the printed exceptions.  why do we put the Null/Runtime exception before Exception?
+Null/Runtime exception is a child class of exception. If we put exception in front of Null/Runtime exception, the later will never been catch. 
+NullPointerException is the earlier exposure, the better. NOT use catch to hide this error. 
+Catch will catch exception from top to bottom. If there are multiple catch, the child class has to be in front of others. 
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 0;
+        int b = 3
+        String s = null;
+        try {
+            System.out.println(b / a);
+            System.out.println(s.equals("aa"));
+            throw new RuntimeException();
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.getMessage();
+        }
+
+        System.out.println("End ...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 0;
+        int b = 3
+        String s = null;
+        try {
+            // System.out.println(b / a);
+            System.out.println(s.equals("aa"));
+            throw new RuntimeException();
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.getMessage();
+        }
+
+        System.out.println("End ...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 0;
+        int b = 3
+        String s = null;
+        try {
+            // System.out.println(b / a);
+            // System.out.println(s.equals("aa"));
+            throw new RuntimeException();
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.getMessage();
+        }
+
+        System.out.println("End ...");
+    }
+}
