@@ -179,3 +179,26 @@ Int data;
 
 ## Get the string, find the maximum number in this string and return it
 Example: ajnfjn100jnvjnf400jnjnjn
+
+int max_num = Integer.MIN_VALUE;
+
+for(int i = lne-1; i >= 0; i--)
+{
+    if(s[i] >= 0 && s[i] <= 9)
+    {
+        int temp = s[i];
+        i--;
+        while((i >= 0) && (s[i] >= 0) && (s[i] <= 9))
+        {
+            temp += temp*10 + s[i];
+            i--;
+        }
+
+        if(temp > max_num) {
+            max_num = temp;
+        }
+    }
+
+}
+
+return max_num;
