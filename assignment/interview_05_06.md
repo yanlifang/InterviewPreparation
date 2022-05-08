@@ -166,6 +166,65 @@
 
 
 ## What is the singleton pattern? How to implement it? And when to use it? 
+Singleton design pattern restricts the instantiation of a class to a single instance. In order to provide coorindated access to a certain resource, throughout an entire software system. Through this design pattern, the singleton class ensures that is is only instantiated once, and can provide easy access to the single instance. 
+
+### Use case 
+Common use-cases for the singleton design pattern include factories, builders and objects that hold program state. 
+
+Singletons are sometimes considered to be an alternative to global variables or static classes. 
+
+Compared to global varaibles, singletons have benefits:
+1. Singleton instance fields don't take up space in the global namespace
+2. Singletons may be lazily initialized 
+
+Compared to static class, singleton holds an instantiated object, static classes do not: 
+1. Singletons can implement interfaces 
+2. Singletons can be passed as parameters
+3. Singletons can have their instances swapped out (such as for testing purposes)
+4. Singletons can be handled polymorphically, so there may exist multiple implementations 
+
+Implementation: 
+1. Typically implemented with a private constructor method, and a public static method to return the instance of the singleton - stored in a private static final variable. 
+2. Two types of singleton implementations, diff in initialize the singleton instance, must consider thread-safety:
+   1. eager: Singleton instance is created when the singleton variable is initialized, not when it is first used. May consum system resources unnecessarily. Thread-safe 
+    public final class Singleton {
+        private static final Singleton INSTANCE = new Singleton();
+        private Singleton() {}
+
+        public static Singleton getInstance() {
+            return INSTANCE;
+        }
+    }
+   2. lazy initialization: created when the static getInstance method is first called. Ensures singleton instance only consumes system resources when it is absolutely necessary. Not thread safe. Singleton instance may be created multiple times, in a program with multiple threads, all using the Singleton class simultaneously. Might threads receiving a partially-created singleton object. 
+
+   public final class Singleton {
+       private static Singleton instance = null;
+       private Singleton() {}
+
+       public static Singleton getInstance() {
+           if (instance == null) {
+               instance = new Singleton();
+           }
+           return instance;
+       }
+   }
+   3. Thread-safe lazy initialization: thread-safe use of synchronization. Instance variable is now also declared as volatile, which ensures that all threads have an updated view of the singleton instance. 
+   public final class Singleton {
+       private static volatile Singleton instance = null;
+       private Singleton() {}
+
+       public static Singleton getInstance() {
+           if (instance == null){
+               synchronized(Singleton.class) {
+                   if (instance == null) {
+                       instace = new Singleton();
+                   }
+               }
+           }
+           return instance;
+       }
+
+   }
 
 ## What is the result in the console? 
 Int data;
