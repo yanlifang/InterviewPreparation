@@ -154,7 +154,87 @@
     Added a new final class StringJoiner in java.util package. Used to construct a sequence of characters separated by a delimter. Create string by passing delimters like comma(,), hyphen(-)
 20. Security Enhancements 
     
-21. 
+## Rest design, url, methods 
+
+## Right view of tree 
+class Node {
+    int data;
+    Node left, right;
+    Node(int item) {
+        data = item;
+        left = right = null;
+    }
+}
+
+class Max_level {
+    int max_level;
+}
+
+class BinaryTree {
+    Node root;
+    Max_level max = new Max_level();
+
+    void rightViewUtil(Node node, int level, Max_level max_level) {
+        if (node == null) return;
+
+        if(max_level.max_level < level) {
+            System.out.println(node.data + " ");
+            max_level.max_level = level;
+        }
+    }
+
+    rightViewUtil(node.right, level+1, max_level);
+    rightViewUtil(node.left, level+1, max_level);
+}
+
+void rightView() {
+    rightView(root);
+}
+
+void rightView(Node node) {
+    rightViewUtil(node, 1, max);
+}
+
+public static void main(String args[]) {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        tree.root.right.left = new Node(6);
+        tree.root.right.right = new Node(7);
+        tree.root.right.left.right = new Node(8);
+         
+        tree.rightView();
+ 
+}
+}
+
+
+
+## What is Spring Boot? 
+Platform for Java developers, stand-alone and production-grade spring application. Minimum configrations without the need for an entire SPring configuration setup. 
+
+Advantages
+1. Easy to understand and develop spring applications
+2. Increases productivity 
+3. Reduces the development time 
+
+Goals 
+1. Avoid complex XML configuration in Spring 
+2. Develop a production ready Spring applications in an easier way 
+3. Reduce the development time and run the application independently 
+4. Offer an easiest way of getting started with application 
+
+Why Spring Boot?
+    It provides a flexible way to configure Java Beans, XML configurations, and Database Transactions.
+    It provides a powerful batch processing and manages REST endpoints.
+    In Spring Boot, everything is auto configured; no manual configurations are needed.
+    It offers annotation-based spring application
+    Eases dependency management
+    It includes Embedded Servlet Container
+
 
     
 ## Bean scope in spring (#9) https://www.tutorialspoint.com/spring/spring_bean_scopes.htm
@@ -233,6 +313,7 @@ Int data;
   location: class Operation
 1 error
 
+after correct Int to int: before and after both are 0 
 
 
 
