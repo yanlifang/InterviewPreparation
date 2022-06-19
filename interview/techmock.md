@@ -34,7 +34,7 @@ Inserting null object is not possible in ConcurrentHashMap a key or value.
 public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements ConcurrentMap<K, V>, Serializable 
 
 ## thread (write), how many kinds of locks 
-Two ways to create a thread
+Three ways to create a thread
 1. Created by extending the Thread class and overriding its run() method 
 public class Main extends Thread {
     public void run() {
@@ -72,6 +72,44 @@ public class Main implements Runnable {
     }
 }
 
+3. implement the callable interface 
+Java Callable tasks return java.util.concurrent.Future object. Using Java Future object, we can find out the status of the Callable task and get the returned object. It provides get() method that can wait for the Callable to finish and then return the result. 
+Differences between runnable and callable: runnable - no return void function; callable - has return value 
+    To find status of associated callable task: 
+    - isDOne()
+    - isCanceled()
+difference of start and run: thread.run will run this test on current thread, but thread.start have lots of other code, which will create new thread, then use new thread to run the test 
+
+public class MyCallable implements Callable<String> {
+    @Override 
+    public String call() throws Exception {
+        Thread.sleep(1000);
+        return Thread.currentThread().getName();
+    }
+
+    public static void main(String args[]) {
+        ExecutorService executor = Executors.newFixedThreadPool(10);
+        List<Future<String>> list = new ArrayList<Future<String>>;
+        Callable<String> callable = new MyCallable();
+        for (int i = 0; i < 100; i++) {
+            Future<String> future = executor.submit(callable);
+            list.add(future);
+        }
+
+        for(Future<String> fut : list) {
+            try {
+                System.out.println(new Date() + "::" + fut.get());
+            } catch (InterruptedExcepton | ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+        executor.shutdown(); //shutdown the service 
+    }
+}
+
+
+
+
 Concurrency problems: 
 isAlice(): to thread to check if thread has finished running before using any attributes that the thread can change 
 Main thread = new Thread();
@@ -87,6 +125,41 @@ System.out.println("Main: " + amount);
 public void run() {
     amount++;
 }
+
+## CI/CD continuous integration and continuous delivery or continuous deployment
+Bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications.
+
+Jenkins is an open source automation server. Helps automate the parts of software development related to building, testing, and deploying, facilitating continous integration and continous delivery. It is a server-based system that runs in servlet containers such as Apache Tomcat. 
+
+benefits of CI/CD: 
+1. Less risk
+2. More frequent releases 
+3. Improved productivity
+4. Elevated quality
+5. Better design 
+
+Most important characteristics in a CI/CD platform? 
+1. Reliability 
+2. Speed 
+3. Reproducibility
+4. Ease of use 
+
+Difference between continous integration, continous delivery, and continous deployment? 
+1. CI: executes the sequence of steps required to build and test the project. CI runs automatically on every change committed to a shared repository, offering developers quick feedback about the project's state.
+2. Continous delivery: extension of CI. Goal is to automate every step required to package and release a piece of software. The output of a continuous delivery pipeline takes the form of a deployable binary, package or container. 
+3. CD: option step-up from continous delivery. It is a process that takes the output from the delivery pipeline and deploys it to the production system in a safe and automated way. 
+
+
+## JUnit testing 
+1. JUnit testing: Java unit testing framework that is one of the best test methods for regression testing. Open source framework, used to write and run repeatable automated tests. 
+2. Set up Junit testing
+3. test each function, life cycle annotation and test 
+
+## Mockito 
+Open source testing framework. Allows the creation of test double objects in automated unit tests for the purpose of test-driven development or behavior-driven development. 
+Cann't support final, static, private method 
+
+
 
 ## lambda function
 1. parameter -> expression
@@ -106,6 +179,10 @@ numbers.forEach(method);
 
 To use a lambda expression in a method, the method should have a parameter with a single-method interface as its type. Calling the interfae's method will run the lambda expression. 
 
+## Stream 
+1. create stream object, like collections, list array
+2. use all features of stream, intermediate operation, like map and filter 
+3. termination operation, terminate pipeline, collection, forEach 
 
 ## difference between collection and stream 
 1. obtain a stream from a collection by calling the stream() method of the given collection. e.g. Stream<String> stream = items.stream();
@@ -384,6 +461,11 @@ public ResponseEntity<Void> deleteBookById(@PathVariable long bookId){
 DI: provided by Spring IOC(inversion of control) 
 1. Setter Dependency injection (SDI): injected with the help of setter and/or getter methods. Set DI as SDI in the bean, done through the bean-configuration file, under property tag 
 2. Constructor dependency injection 
+3. Field Injection: more popular, reflection like 
+   1. @autowired
+   2. private UserRepo UserRepo;  
+
+What is the best injection method: Constructor dependency injection, default constructor will make sure inject successfully 
 
 ## abstract class and interface 
 Type of methods: Interface can have only abstract methods. An abstract class can have abstract and non-abstract methods. From Java 8, it can have default and static methods also.
