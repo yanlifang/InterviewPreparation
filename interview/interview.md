@@ -1,0 +1,51 @@
+## Java Core  https://www.interviewbit.com/java-interview-questions/
+### What is Java?
+   Java is the high-level programming language that was developped by James Gosling in the year 1982. It is based on the principles of object-oriented programming and can be used to develop large-scale applications. 
+### Why is Java a platform independent language? 
+    Java language was developed in such a way that it does not depend on any hardware or software due to the fact that the compiler compiles the code and then converts it to platform-independent byte code which can be run on multiple systems. Only require machine to have a runtime environment
+
+### Why is Java not a pure object oriented language? 
+    Java supports primitive data types - byte, boolean, char, short, int, float, long, and double and hence it is not a pure object oriented language. 
+
+### Difference between heap and stack memory in Java? And how Java utlizes this?
+    Stack memory is the portion of memory that was assigned to every individual program. And it was fixed. On the other hand, heap memory is the portion that was not allocated to the Java program but it will be available for use by the Java program when it is requried, mostly during the runtime of the program. 
+    Java utilizes this memory as - 
+    1. When we write a java program then all the variables, methods, etc are stored in the stack memory.
+    2.  And when we create any object in the java program then that object was created in the heap memory. And it was referenced from the stack memory.
+
+    class Main {
+        public void printArray(int[] array){
+       for(int i : array)
+           System.out.println(i);
+        }
+        public static void main(String args[]) {
+       int[] array = new int[10];
+       printArray(array);
+        }
+    }
+
+    https://d3n0h9tb65y8q.cloudfront.net/public_assets/assets/000/003/020/original/stack_and_heap_memory.png?1648813762
+
+## SpringBoot作业题和分享的面经熟背，还有那本grokking的书。
+能有一定的例子，比如bean of scope, singleton, 哪里，什么场景用到了singleton？
+
+## Microservice, kafka, cloud
+### Microservice 
+
+### Kafka 
+
+### Cloud 
+
+
+## Algorithm
+1)先讲自己对题意的理解，题意理解不了，就要clarify。2）简单描述下自己思路中用什么算法和数据结构。3）开始写算法，写的过程中要有一定的沟通。4）一开始写的时候想下corner case并沟通。5）要会自己写main 方法去test自己的算法。会构造不同的test case 去run自己的算法。6）如果run时候报错，会debug，通常是包没导入，或语法错误。
+7）注意自己的coding style 要美观。https://www.jdoodle.com/online-java-compiler/
+
+## Singleton能熟练写Singleton并讲清楚为啥那样写
+
+
+## get orders by customer ID; create a new order
+会让你们徒手写一个API，从设计url, 到controller，到service，到repository 到entity。
+包含payload的设计
+
+## Vending machine system design
