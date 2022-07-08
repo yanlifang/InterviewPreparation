@@ -1,3 +1,43 @@
+## Any locks in multi threadings 
+
+Name and Role
+
+Readwritelock - role 
+
+A ReadWriteLock maintains a pair of associated locks, one for read-only operations and one for writing. The read lock maybe help simultaneously by multiple reader threads, so long as there no writers. The write lock is exclusive. 
+
+Read lock may be held simultaneously by multiple reader threads, so long as there are no writers. The write lock is exclusive. 
+
+Lock readLock() 
+
+Lock writeLock() 
+
+readLock.loc();
+
+try {
+    statements
+} finally {
+    readLock.unlock();
+}
+
+
+ReentrantLcok: implements the lock interface and provides synchronization to methods while accessing shared resources. The code which manipulates the shared resource is surrounded by calls to lock and unlock method. This gives a lock to the current working thread and blocks all other threads which are trying to take a lock on the shared resource. 
+
+ReentrantLock allows threads to enter into the lock on a resource more than once. When the thread first enters into the lock, a hold count is set to one. Before unlocking the thread can re-enter into lock again and every time hold count is incremented by one. For every unlocks request, hold count is decremented by one and when hold count is 0, the resource is unlocked. 
+
+Reentrant locks also offers a fairness parameter, by which the lock would abide by the order of the lock request, after a thread unlocks the resource, the lock would go to the thread which has been waiting for the longest time. 
+
+Future 
+
+
+## Callable to Runnable 
+
+Runnable: does not reaturn anything 
+Callable: return a result
+
+
+
+
 ## final and static keyword
 1. static
    1. static keyword denotes that a member variable, or method, can be accessed without requiring an instantiation of the class to which it belongs. Not needed to create an object to call that method. The method can be called using the class name. 
@@ -185,6 +225,8 @@ To use a lambda expression in a method, the method should have a parameter with 
 3. termination operation, terminate pipeline, collection, forEach 
 
 ## difference between collection and stream 
+create a stream 
+
 1. obtain a stream from a collection by calling the stream() method of the given collection. e.g. Stream<String> stream = items.stream();
 
 Stream processing phases: 
