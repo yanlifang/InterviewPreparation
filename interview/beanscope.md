@@ -1,4 +1,6 @@
 ## jsp.useBean action tag
+https://www.youtube.com/watch?v=xpKbs8FHUi4
+
 
 The jsp:useBean action tag is used to locate or instantiate a bean class. If bean object of the Bean class is already created, it doesn't create the bean depending on the scope. But if object of bean is not craeted, it instantiates the bean.
 
@@ -42,4 +44,20 @@ public class HelloMessageGenerator {
 2. session scope
 3. application scope 
 4. websocket scope 
+
+
+convert a class to bean, add @Component or @Service 
+Singleton and Prototype belongs to one category 
+
+@Component("name of singleton"): if do not provide name, it will be the same as class name 
+@Scope("singleton")
+@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+
+public class BeanScope{
+}
+
+singleton: every call will return the same singleton 
+prototype: every call will return a new prototype 
+
+ProxyMode=Scope.ProxyMode.targetclass 
 

@@ -32,7 +32,7 @@ Future
 
 ## Callable to Runnable 
 
-Runnable: does not reaturn anything 
+Runnable: does not return anything 
 Callable: return a result
 
 
