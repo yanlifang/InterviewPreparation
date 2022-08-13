@@ -1,12 +1,12 @@
-## Any locks in multi threadings 
-
+## Any locks in multi thread
 Name and Role
 
 Readwritelock - role 
 
-A ReadWriteLock maintains a pair of associated locks, one for read-only operations and one for writing. The read lock maybe help simultaneously by multiple reader threads, so long as there no writers. The write lock is exclusive. 
+A ReadWriteLock maintains a pair of associated locks, one for read-only operations and one for writing. The read lock maybe help simultaneously by multiple reader threads, so long as there no writers. 
+Write lock is exclusive. 
 
-Read lock may be held simultaneously by multiple reader threads, so long as there are no writers. The write lock is exclusive. 
+Read lock held simultaneously by multiple reader threads, so long as there are no writers. The write lock is exclusive. 
 
 Lock readLock() 
 
