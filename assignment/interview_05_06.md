@@ -133,7 +133,7 @@
     Provides three different encoders and decoders to encrypt info at each level. 
 8. Static methods in interface 
 9.  Optional class 
-   Introduced a new class Optional in Java 8. Public final class: deal with NullPointerException in Java application. Import java.util package. 
+    Introduced a new class Optional in Java 8. Public final class: deal with NullPointerException in Java application. Import java.util package. 
     Provides methods to check the presence of value or particular variable. 
 11. Collection class 
     Final class extends Object class. Provides reduction operations, like accumulating elements into collections, summarizing elements accoridng to various criteria etc. 

@@ -1,0 +1,26 @@
+patriot workshop
+
+west government street, brandon ms 
+
+Responsibilities:
+//postgres: 
+
+//billing: refund, cancel order, refund extra charge, immigration, optimal refund procedure; charge, refund 
+//springbatch: daily transaction file 
+
+//refund: developed API, using REST to design API, JSON to interaction, springboot, db, ORM framework
+//tdd: JUnit, Mockit to write test 
+
+//Jira distribute tasks, sprint - every two weeks, every wed, sprint planning, reviewing
+daily stand up meeting - update tickets process, it was blocked, ask for help 
+//github to manage coding 
+
+//describe the task 
+//Jenkins for CI/CD 
+
+//cloud for verizon: 
+//kafka: event from OMS, consumer OMS orders, 
+//Query per second for verizon refund: 
+receive order created event, charge the client, produce event - invoice created, to next team like shipping, 
+
+Order refund event 

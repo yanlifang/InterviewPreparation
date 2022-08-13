@@ -3,7 +3,7 @@
 
 
 ## What is Jenkins 
-Open source automation server writtein in Java. It is used to automate software development process via continous integration and facilitates continuous delivery. 
+Open source automation server writtein in Java. It is used to automate software development process via continuous integration and facilitates continuous delivery. 
 
 1. Jenkins is a self contained Java-based program, ready to run with packages. 
 2. Easy configuration, easy installation. Easy set up  and configured via its web interface which includes error checks and built in help. 
@@ -22,10 +22,23 @@ Open source automation server writtein in Java. It is used to automate software 
 
 ## Continuous Integration Tools 
 
-Allow continous development, test and deployment of newly created codes 
+Allow continuous development, test and deployment of newly created codes 
 
 1. Apache Gump is designed with the aim to build and test all the open source Java projects, every night. It makes sure that all the projects are compatible at both API level and functionality level. 
 2. 
 
 ## Features of Jenkins 
+
+
+## Deploy steps
+
+build -> unit test -> deploy to test -> functional test ->release -> deploy to staging  -> approval -> deploy to XXX 
+
+dev.properties to build first 
+activate prod.properties to deploy 
+
+e2e intergration test, pressure test 
+
+## Build, release, deployment? 
+How, why, how to control the quality 
 

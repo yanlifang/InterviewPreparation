@@ -32,7 +32,7 @@ Future
 
 ## Callable to Runnable 
 
-Runnable: does not reaturn anything 
+Runnable: does not return anything 
 Callable: return a result
 
 
@@ -40,21 +40,23 @@ Callable: return a result
 
 ## final and static keyword
 1. static
-   1. static keyword denotes that a member variable, or method, can be accessed without requiring an instantiation of the class to which it belongs. Not needed to create an object to call that method. The method can be called using the class name. 
+   1. static keyword denotes that a member variable, or method, can be accessed without requiring an instantiation of the class to which it belongs. 
+      Not needed to create an object to call that method. The method can be called using the class name. 
    2. static variables can be reinitialized 
    3. can be called by other static methods and only access the static members of the class 
    4. The static class obj cannot be created. It only contains static members only 
    5. The static keyword can be used in a block.
 
 2. Final 
-   1. Final keyword denotes an entity that can only be assigned once. T
+   1. Final keyword denotes an entity that can only be assigned once. 
    2. The final methods cannot be overriden 
    3. The final class cannot be inherited by other classes.
    4. The final keyword is not used with a block.
 
 ## Hashmap and hashtable 
 Hashmap and hashtable store key and value pairs in a hash table. When using a hashtable or hashmap, we specify an object that is used as a key and the value that you want to be linked to that key. The key is then hashed, and the resulting hash code is used as the index at which the value is stored within the table. 
-HashMap is non-synchronized. Not thread-safe and cannot be shared between many threads without proper synchronization code whereas hashtable is synchronized. It is thread-safe and can be shared with many threads. 
+
+### HashMap is non-synchronized. Not thread-safe and cannot be shared between many threads without proper synchronization code whereas hashtable is synchronized. It is thread-safe and can be shared with many threads.
 HashMap allows one null key and multiple null values whereas Hashtable does not allow any null key or value. 
 HashMap is generally preferred over HashTable if thread synchronization is not needed. 
 
@@ -184,10 +186,10 @@ Most important characteristics in a CI/CD platform?
 3. Reproducibility
 4. Ease of use 
 
-Difference between continous integration, continous delivery, and continous deployment? 
+Difference between continuous integration, continuous delivery, and continuous deployment? 
 1. CI: executes the sequence of steps required to build and test the project. CI runs automatically on every change committed to a shared repository, offering developers quick feedback about the project's state.
-2. Continous delivery: extension of CI. Goal is to automate every step required to package and release a piece of software. The output of a continuous delivery pipeline takes the form of a deployable binary, package or container. 
-3. CD: option step-up from continous delivery. It is a process that takes the output from the delivery pipeline and deploys it to the production system in a safe and automated way. 
+2. Continuous delivery: extension of CI. Goal is to automate every step required to package and release a piece of software. The output of a continuous delivery pipeline takes the form of a deployable binary, package or container. 
+3. CD: option step-up from continuous delivery. It is a process that takes the output from the delivery pipeline and deploys it to the production system in a safe and automated way. 
 
 
 ## JUnit testing 

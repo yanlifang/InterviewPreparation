@@ -5,7 +5,7 @@ https://www.interviewbit.com/microservices-interview-questions/
 Microservices, also known as Microservices Architecture, is basically an SDLC approach in which large applications are built as a collection of small functional modules. 
 Widely adopted architectural concetps within software development. 
 
-Pros: easy maitenance, development faster, big asset for the latest methods of software development such as DevOps and Agile, helps deliver large, complex applications promptly, frequently, and reliably. 
+Pros: easy maintenance, development faster, big asset for the latest methods of software development such as DevOps and Agile, helps deliver large, complex applications promptly, frequently, and reliably. 
 
 Applications are modeled as collections of services: 
 1.  Maintainable and testable 
@@ -27,7 +27,7 @@ Agility
 
 ## Main components of Microservices 
 1. Containers, clustering, and orchestration 
-2. IaC - Infrastructure as Code Conception
+2. IoC - Infrastructure as Code Conception
 3. Cloud Infrastructure 
 4. API Gateway 
 5. Enterprise Service Bus
