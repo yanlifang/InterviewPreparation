@@ -1,3 +1,5 @@
+install tomcat on ubuntu
+https://linuxhint.com/install_apache_tomcat_server_ubuntu/
 ## Why spring 
 popular framework for building java applications 
 initially a simpler and lightweight alternative to J2EE
@@ -261,7 +263,6 @@ Default Scope: Singleton
 Spring Container creates only one instance of the bean, by default 
 It is cached in memory 
 All requests for the bean: will return a SHARED reference to the SAME bean 
-
 Singleton: creates a single shared instance of the bean. Default scope 
 Prototype: creates a new bean instance for each container request.
 request: scoped to an HTTP web request. Only used for web apps 
@@ -271,3 +272,45 @@ Global session: scoped to a global HTTP web session. Only used for web apps.
 <beans ..>
     <bean id="myCoach" class="com.example.path" scope="prototype"> </bean>
 </beans>
+
+Special Note: Defining init and destroy methods - Method Signatures
+
+Special Note about init and destroy Method Signatures
+
+When using XML configuration, I want to provide additional details regarding the method signatures of the init-method  and destroy-method .
+
+Access modifier
+The method can have any access modifier (public, protected, private)
+
+Return type
+The method can have any return type. However, "void' is most commonly used. If you give a return type just note that you will not be able to capture the return value. As a result, "void" is commonly used.
+
+Method name
+The method can have any method name.
+
+Arguments
+The method can not accept any arguments. The method should be no-arg.
+
+## Java Annotations
+special labels/markers added to Java classes
+Provide meta-data about the class
+Processed at compile time or run-time for special processing 
+
+@Override: annotation, tell compiler we are overriding a method, at compilation time, compiler will check/verify the override 
+
+## Why Spring Configuration with Annotations?
+XML configuration can be verbose
+Configure your Spring beans with Annotations 
+Annotations minimizes the XML configuration 
+
+## Scanning for Component Classes
+Spring will scan your Java classes for special annotations
+Automatically register the beans in the Spring Container 
+
+## Development Process
+Enable component scanning in spring config file 
+Add the @Component Annotation to your Java classes: give bean id @Component(beanid) - register bean automatically 
+Retrieve bean from Spring container: Coach theCoach = context.getBean(beanid, Coachl.class);
+
+# Annottaion 
+## 
