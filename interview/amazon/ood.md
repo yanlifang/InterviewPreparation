@@ -129,3 +129,102 @@ Use case; button
 
 ### Challenge 
 How do you handle an external request? 
+
+# Vending machine 
+public class Main{ 
+    public static void main(String[] args) {
+        Water w1 = new Water();
+        Water w2 = new Water();
+        Coke c1 = new Coke();
+        Coke c2 = new Coke();
+
+        VendingMachine vm = new VendingMachine(5);
+        vm.addProduct("A1", W1);
+        vm.addProduct("A2", W1);
+        vm.addProduct("A3", W1);
+        vm.addProduct("A4", W1);
+
+        Customer customer = new Customer(vm);
+        customer.select("A1");
+        customer.select("A2");
+        
+        Payment card = new CreditCardPayment();
+        customer.checkout(card);
+}
+
+class VendingMachine {
+    Map<String, Product> slots;
+    int capacity;  
+    int pay;
+
+    VendingMachine(int capacity) {
+        this.capacity = capacity;
+    }
+    
+    boolean addProduct(String productId, Product product) {
+        if(this.capacity >= slot.size()) return false;
+        slots.put(productId, product);
+    }
+
+    boolean order(String product) {
+        return map.containsKey(product) ? map.get(product) : null;  
+    }
+
+    float checkout(List<Product> cart, Payment payment) {
+        int totalAmount = 0;
+        for(Product p : cart) {
+            totalAmount += payment.makePayment(product);
+        }
+        return totalAmount;
+    }
+}
+
+class Customer {
+    VendingMachine vendingMachine;
+    List<Product> cart;
+
+    public boolean select(String productId) {
+        Product product = vendingMachine.order(productId);
+        if(product != null) {
+            cart.add(product);
+            return true;
+        }
+        return false;
+    }
+
+    public float checkout(Payment payment) {
+        return vendingMachine.checkout(cart, payment);
+    }
+}
+
+class Product {
+    float getPrice();
+}
+
+class Water implements Product{ 
+    String name;
+    float getPRice() return 1.0;
+}
+
+class Coke implements Product {
+    String name;
+    float getPrice() return 2.0;
+}
+
+class Payment {
+    abstract float checkOut(Product productId);
+}
+
+class CreditCardPayment extends Payment{
+    float checkout(Product productId) {
+        return productId.getPrice()* (1+0.1);
+    }
+}
+
+class cashPayment extends Payment{
+    float checkout(Product productId) {
+        return productId.getPrice() * (1+0.0);
+    }
+}
+
+

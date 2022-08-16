@@ -1,3 +1,4 @@
+https://leetcode.com/discuss/interview-question/2362862/Amazon-Leadership-Principle-Interview-Questions
 https://www.bilibili.com/video/BV1ef4y1d7co?spm_id_from=333.337.search-card.all.click&vd_source=1368a6bf9d20262ce61b6f690c7dd3d7
 ## coding questions 
 353 
@@ -76,4 +77,39 @@ chess design
 
 # Part 2 
 76
+863
 
+
+```aidl
+//backpack 
+public int change(int amount, int[] coins) {
+    int[][] dp = new int[coins.length+1][amount+1];
+    
+    for(int i = 0; i <= coins.length; i++) dp[i][0] =1;
+    
+    for(int i = 1; i <= coins.length; i++) {
+        for(int j = 1; j <= amount; j++) {
+        dp[i][j] = dp[i-1][j];
+        if(j - coins[i-1] >= 0) {
+            dp[i][j] += dp[i][j-coins[i-1]];
+        }
+        
+    }
+    return dp[coins.length][amount];
+}    
+
+
+
+```
+
+```aidl
+int n = 5;
+int[] dp = new int[n+1];
+int[] ok new int[]{1, 2, 5, 10};
+
+dp[0] = 1;
+for(int i : ok) {
+for(int j = i; j <= n; j++) {
+dp[j] += dp[j-1];
+}} return dp[n];
+```
