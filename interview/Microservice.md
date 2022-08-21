@@ -10,7 +10,7 @@ Pros: easy maintenance, development faster, big asset for the latest methods of 
 Applications are modeled as collections of services: 
 1.  Maintainable and testable 
 2.  Loosely coupled 
-3.  Indepently deployable 
+3.  Indepedently deployable 
 4.  Designed or organized around business capabilities 
 5.  Managed by a small team 
 

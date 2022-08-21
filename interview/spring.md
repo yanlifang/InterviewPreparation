@@ -3,7 +3,7 @@ https://linuxhint.com/install_apache_tomcat_server_ubuntu/
 ## Why spring 
 popular framework for building java applications 
 initially a simpler and lightweight alternative to J2EE
-provides a large number of helper classes ... make thing easier 
+provides a large number helper classes ... make thing easier 
 Simply Java Enterprise Development 
 
 
@@ -107,7 +107,7 @@ context.close();
 
 ## DI
 The dependency inversion principle 
-The client delegates to calls to another obj the responsibility of providing its dependencies 
+The client delegates to call another obj the responsibility of providing its dependencies 
 
 Constructor Injection: define the dependency interface and class, create a constructor in your class for injections, configure the dependency injection in Spring Config file 
 Setter injection 
@@ -121,9 +121,9 @@ FAQ: What is a Spring Bean?
 
 A "Spring Bean" is simply a Java object.
 
-When Java objects are created by the Spring Container, then Spring refers to them as "Spring Beans".
+When Java objects were created by the Spring Container, then Spring refers to them as "Spring Beans".
 
-Spring Beans are created from normal Java classes .... just like Java objects. 
+Spring Beans were created from normal Java classes .... just like Java objects. 
 
 ![img.png](img.png)
 Source: https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-introduction

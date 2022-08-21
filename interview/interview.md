@@ -7,6 +7,23 @@ finally是异常处理语句结构的一部分，表示无论是否发生异常�
 finalize是Object类中的一个方法，
 在垃圾回收器执行的时候会调用被回收对象的此方法，供垃圾收集时的其他资源回收。
 
+
+## Damon thread on background 
+finalize is a damon thread 
+
+## Serilization 
+process of converting the Java object into a Byte stream
+Serialization in Java is the process of converting the Java code object 
+into a bytestream, to transfer the object code from one java virtual machine to another and 
+recreate it using the process of deserialization 
+ObjectMapper 
+
+## An oject outputstream writes primitive data types and graphs of Java objects to an OutputStream
+
+spirng has a lot configuration. Spring is a framework which helps to conenct different components together.
+SpringBoot is based on the spring, less configuration. Lots of ready to use starter dependency which are easy to use 
+
+
 ## 面向对象编程是有诸多好处的：
 封装特性能够提高类的易用性，减少编程过程中代码出错的风险。
 继承最大的好处就是能够实现代码的复用。
@@ -30,7 +47,8 @@ Get into from XML file and works accordingly.
 1. Main tasks: to instantiate the application class, to configure the obj, to assemble the dependencies between the objs
 2. Two types of IoC containers: BeanFactory, ApplicationContext
 
-The org.springframework.beans.factory.BeanFactory and the org.springframework.context.ApplicationContext interfaces acts as the IoC container. The ApplicationContext interface is built on top of the BeanFactory interface. It adds some extra functionality than BeanFactory such as simple integration with Spring's AOP, message resource handling (for I18N), event propagation, application layer specific context (e.g. WebApplicationContext) for web application. So it is better to use ApplicationContext than BeanFactory.
+The org.springframework.beans.factory.BeanFactory and the org.springframework.context.ApplicationContext interfaces acts as the IoC container. 
+The ApplicationContext interface is built on top of the BeanFactory interface. It adds some extra functionality than BeanFactory such as simple integration with Spring's AOP, message resource handling (for I18N), event propagation, application layer specific context (e.g. WebApplicationContext) for web application. So it is better to use ApplicationContext than BeanFactory.
 BeanFactory: 
 Resource resource=new ClassPathResource("applicationContext.xml");  
 BeanFactory factory=new XmlBeanFactory(resource);
@@ -69,7 +87,7 @@ No.	Constructor Injection	                            Setter Injection
 3)	Creates new instance if any modification occurs	    Doesn't create new instance if you change the property value
 4)	Better for too many properties	                    Better for few properties.
 
-## Autowiring in Sping? Autowiring modes? 
+## Autowiring in Spring? Autowiring modes? 
 Autowiring enables the programmer to inject the bean automatically. We don't need to write explicit injection logic.
 https://www.javatpoint.com/spring-interview-questions
 
@@ -83,14 +101,14 @@ https://docs.google.com/document/d/1o7sKok4oS0Fla4FlYbZ9Gb_rhbHuTeD_orJR8f_1pGA/
 ### Why is Java a platform independent language? 
     Java language was developed in such a way that it does not depend on any hardware or software due to the fact that the compiler compiles the code and then converts it to platform-independent byte code which can be run on multiple systems. Only require machine to have a runtime environment
 
-### Why is Java not a pure object oriented language? 
+### Why is Java not a pure object-oriented language? 
     Java supports primitive data types - byte, boolean, char, short, int, float, long, and double and hence it is not a pure object oriented language. 
 
 ### Difference between heap and stack memory in Java? And how Java utlizes this?
     Stack memory is the portion of memory that was assigned to every individual program. And it was fixed. On the other hand, heap memory is the portion that was not allocated to the Java program but it will be available for use by the Java program when it is requried, mostly during the runtime of the program. 
     Java utilizes this memory as - 
     1. When we write a java program then all the variables, methods, etc are stored in the stack memory.
-    2.  And when we create any object in the java program then that object was created in the heap memory. And it was referenced from the stack memory.
+    2. And when we create any object in the java program then that object was created in the heap memory. And it was referenced from the stack memory.
 
     class Main {
         public void printArray(int[] array){
@@ -128,4 +146,23 @@ https://docs.google.com/document/d/1o7sKok4oS0Fla4FlYbZ9Gb_rhbHuTeD_orJR8f_1pGA/
 包含payload的设计
 
 ## Vending machine system design
+
+## Spring Boot Actuator
+
+Actuator brings production-ready features to our application.
+Monitoring our app, gathering matrics, understanding trasffic, or the state of our database become trival with this dependency.
+
+Main benefit of this library: get production-grade tools without having to actually implement these features ourselves.
+
+Actuator: mainly used to expose operational information about the running application - health, metrics, info, dump, env, etc.
+It uses HTTP endpoitns or JMX beans to enable us to interact with it.
+
+Once this dependency is on the classpath, several endpoints are available for us out of the box.
+As with most Spring modules, we can easily configure or extent it in many ways.
+
+Thus, the only two available by default are /health and /info.
+
+If we want to enable all of them, we could set management.endpoints.web.exposure.include=*. Alternatively, we can list endpoints that should be enabled.
+
+
 >>>>>>> 7a75fdac35e531d9a693c3701667752d14b56d20
