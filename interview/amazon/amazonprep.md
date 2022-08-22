@@ -7,6 +7,8 @@ https://www.bilibili.com/video/BV1ef4y1d7co?spm_id_from=333.337.search-card.all.
 2127
 204
 
+https://wentao-shao.gitbook.io/leetcode/basic-knowledge/java-syntax
+
 ![](topological sort.png)
 Method 1: 
 ```aidl
